@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:fitsSystemWindows="true"
+    android:paddingTop="@dimen/app_bar"
+    tools:context="adhish.crowdfire.com.wardrobe.Home">
+
+
+    <include layout="@layout/content_main"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabAddBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tint="@color/white"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_gravity="top|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_add" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabShuffle"
+        android:layout_width="wrap_content"
+        android:tint="@color/white"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_autorenew_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabLike"
+        android:layout_width="wrap_content"
+        android:tint="@color/white"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_gravity="center|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_favorite_outline_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabAddTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:tint="@color/white"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_input_add" />
+
+</android.support.design.widget.CoordinatorLayout>
