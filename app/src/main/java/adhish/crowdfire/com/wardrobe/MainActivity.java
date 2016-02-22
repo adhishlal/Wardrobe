@@ -101,13 +101,19 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
 
-                fabLike.setImageDrawable(getResources().getDrawable(R.drawable.ic_favorite_24dp));
+                if(pager.getAdapter().getCount()>0 && pager_bottoms.getAdapter().getCount()>0) {
+                    fabLike.setImageDrawable(getResources().getDrawable(R.drawable.ic_favorite_24dp));
 
-                like = 1;
+                    like = 1;
 
-                databaseHandler.addFav(pager.getCurrentItem(), pager_bottoms.getCurrentItem());
-                Snackbar.make(view, "Liked! Combination saved", Snackbar.LENGTH_LONG)
-                        .show();
+                    databaseHandler.addFav(pager.getCurrentItem(), pager_bottoms.getCurrentItem());
+                    Snackbar.make(view, "Liked! Combination saved", Snackbar.LENGTH_LONG)
+                            .show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Add top and bottoms both to make it favorite",Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -130,10 +136,16 @@ public class MainActivity extends AppCompatActivity
         fabShuffle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int topRand = r.nextInt(pager.getAdapter().getCount());
-                int bottomRand = r.nextInt(pager_bottoms.getAdapter().getCount());
-                pager.setCurrentItem(topRand);
-                pager_bottoms.setCurrentItem(bottomRand);
+                if(pager.getAdapter().getCount()>0 && pager_bottoms.getAdapter().getCount()>0) {
+                    int topRand = r.nextInt(pager.getAdapter().getCount());
+                    int bottomRand = r.nextInt(pager_bottoms.getAdapter().getCount());
+                    pager.setCurrentItem(topRand);
+                    pager_bottoms.setCurrentItem(bottomRand);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Insufficient items to shuffle",Toast.LENGTH_LONG).show();
+                }
             }
         });
 
