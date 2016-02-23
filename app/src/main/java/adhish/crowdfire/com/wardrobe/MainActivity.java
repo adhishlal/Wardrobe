@@ -117,6 +117,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        //To show random selection whenever app open up
+        if(pager.getAdapter().getCount()>0 && pager_bottoms.getAdapter().getCount()>0) {
+            int topRand = r.nextInt(pager.getAdapter().getCount());
+            int bottomRand = r.nextInt(pager_bottoms.getAdapter().getCount());
+            pager.setCurrentItem(topRand);
+            pager_bottoms.setCurrentItem(bottomRand);
+        }
 
         fabTop.setOnClickListener(new View.OnClickListener() {
             @Override
